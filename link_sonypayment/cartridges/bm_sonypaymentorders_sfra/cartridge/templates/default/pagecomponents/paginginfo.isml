@@ -1,0 +1,1 @@
+Showing <span class="strong"><isprint value="${pdict.pagingmodel.start + 1}" formatter="#"></span> - <span class="strong"><isprint value="${pdict.pagingmodel.end + 1}" formatter="#"></span>  of <span class="strong"><isprint value="${pdict.pagingmodel.count}"  formatter="#"></span>  items.

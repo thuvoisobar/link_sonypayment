@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<extensions xmlns="http://www.demandware.com/xml/bmmodules/2007-12-11"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.demandware.com/xml/bmmodules/2007-12-11 bmext.xsd">
+
+	<!-- =============================================================== -->
+    <!-- ==                                                           == -->
+    <!-- ==  SITE   MENU   EXTENSIONS                                 == -->
+    <!-- ==                                                           == -->
+    <!-- =============================================================== -->
+
+	<menuaction id="orders_sonypaymentorders" menupath="orders"
+		position="100" site="true">
+		<name xml:lang="x-default">Sony Payment Orders</name>
+		<short_description xml:lang="x-default">Manage the authorization orders of this site</short_description>
+		<description xml:lang="x-default">Manage the authorization orders of this site</description>
+		<exec pipeline="SonyPaymentOrders" node="Start" />
+		<sub-pipelines>
+			<pipeline name="SonyPaymentOrders-Start" />
+			<pipeline name="SonyPaymentOrders-Process" />
+		</sub-pipelines>
+		<parameters>
+			<parameter name="menuname" value="sonypaymentorders" />
+			<parameter name="mainmenuname" value="Order" />
+		</parameters>
+		<icon>icons/sonypaymentorders_ico.gif</icon>
+	</menuaction>
+	
+</extensions>

@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<services xmlns="http://www.demandware.com/xml/impex/services/2014-09-26">
+    <service-credential service-credential-id="sony_authorization.cred">
+        <url>https://www.e-scott.jp/online/aut/OAUT002.do?OperateId=1Auth</url>
+    </service-credential>
+
+    <service-credential service-credential-id="sony_cancel.cred">
+        <url>https://www.e-scott.jp/online/aut/OAUT002.do?OperateId=1Delete</url>
+    </service-credential>
+
+    <service-credential service-credential-id="sony_cancelInvalidMember.cred">
+        <url>https://www.e-scott.jp/online/crp/OCRP005.do?OperateId=4MemUnInval</url>
+    </service-credential>
+
+    <service-credential service-credential-id="sony_captureRecord.cred">
+        <url>https://www.e-scott.jp/online/aut/OAUT002.do?OperateId=1Capture</url>
+    </service-credential>
+
+    <service-credential service-credential-id="sony_cardCheck.cred">
+        <url>https://www.e-scott.jp/online/aut/OAUT002.do?OperateId=1Check</url>
+    </service-credential>
+
+    <service-credential service-credential-id="sony_deleteMember.cred">
+        <url>https://www.e-scott.jp/online/crp/OCRP005.do?OperateId=4MemDel</url>
+    </service-credential>
+
+    <service-credential service-credential-id="sony_editMember.cred">
+        <url>https://www.e-scott.jp/online/crp/OCRP005.do?OperateId=4MemChg</url>
+    </service-credential>
+
+    <service-credential service-credential-id="sony_gathering.cred">
+        <url>https://www.e-scott.jp/online/aut/OAUT002.do?OperateId=1Gathering</url>
+    </service-credential>
+
+    <service-credential service-credential-id="sony_invalidMember.cred">
+        <url>https://www.e-scott.jp/online/crp/OCRP005.do?OperateId=4MemInval</url>
+    </service-credential>
+
+    <service-credential service-credential-id="sony_newMember.cred">
+        <url>https://www.e-scott.jp/online/crp/OCRP005.do?OperateId=4MemAdd</url>
+    </service-credential>
+
+    <service-credential service-credential-id="sony_searchtoken.cred">
+        <url>https://www.e-scott.jp/online/atn/OATN005.do?OperateId=1TokenSearch</url>
+    </service-credential>
+
+    <service-credential service-credential-id="sony_viewMember.cred">
+        <url>https://www.e-scott.jp/online/crp/OCRP005.do?OperateId=4MemRef</url>
+    </service-credential>
+
+    <service-credential service-credential-id="sony_viewMemberByToken.cred">
+        <url>https://www.e-scott.jp/online/crp/OCRP005.do?OperateId=4MemRefToken</url>
+    </service-credential>
+
+    <service-profile service-profile-id="sony_authorization.prof">
+        <timeout-millis>100000</timeout-millis>
+        <rate-limit-enabled>false</rate-limit-enabled>
+        <rate-limit-calls>0</rate-limit-calls>
+        <rate-limit-millis>0</rate-limit-millis>
+        <cb-enabled>false</cb-enabled>
+        <cb-calls>0</cb-calls>
+        <cb-millis>0</cb-millis>
+    </service-profile>
+
+    <service-profile service-profile-id="sony_cancel.prof">
+        <timeout-millis>100000</timeout-millis>
+        <rate-limit-enabled>false</rate-limit-enabled>
+        <rate-limit-calls>0</rate-limit-calls>
+        <rate-limit-millis>0</rate-limit-millis>
+        <cb-enabled>false</cb-enabled>
+        <cb-calls>0</cb-calls>
+        <cb-millis>0</cb-millis>
+    </service-profile>
+
+    <service-profile service-profile-id="sony_cancelInvalidMember.prof">
+        <timeout-millis>100000</timeout-millis>
+        <rate-limit-enabled>false</rate-limit-enabled>
+        <rate-limit-calls>0</rate-limit-calls>
+        <rate-limit-millis>0</rate-limit-millis>
+        <cb-enabled>false</cb-enabled>
+        <cb-calls>0</cb-calls>
+        <cb-millis>0</cb-millis>
+    </service-profile>
+
+    <service-profile service-profile-id="sony_captureRecord.prof">
+        <timeout-millis>100000</timeout-millis>
+        <rate-limit-enabled>false</rate-limit-enabled>
+        <rate-limit-calls>0</rate-limit-calls>
+        <rate-limit-millis>0</rate-limit-millis>
+        <cb-enabled>false</cb-enabled>
+        <cb-calls>0</cb-calls>
+        <cb-millis>0</cb-millis>
+    </service-profile>
+
+    <service-profile service-profile-id="sony_cardCheck.prof">
+        <timeout-millis>100000</timeout-millis>
+        <rate-limit-enabled>false</rate-limit-enabled>
+        <rate-limit-calls>0</rate-limit-calls>
+        <rate-limit-millis>0</rate-limit-millis>
+        <cb-enabled>false</cb-enabled>
+        <cb-calls>0</cb-calls>
+        <cb-millis>0</cb-millis>
+    </service-profile>
+
+    <service-profile service-profile-id="sony_deleteMember.prof">
+        <timeout-millis>100000</timeout-millis>
+        <rate-limit-enabled>false</rate-limit-enabled>
+        <rate-limit-calls>0</rate-limit-calls>
+        <rate-limit-millis>0</rate-limit-millis>
+        <cb-enabled>false</cb-enabled>
+        <cb-calls>0</cb-calls>
+        <cb-millis>0</cb-millis>
+    </service-profile>
+
+    <service-profile service-profile-id="sony_editMember.prof">
+        <timeout-millis>100000</timeout-millis>
+        <rate-limit-enabled>false</rate-limit-enabled>
+        <rate-limit-calls>0</rate-limit-calls>
+        <rate-limit-millis>0</rate-limit-millis>
+        <cb-enabled>false</cb-enabled>
+        <cb-calls>0</cb-calls>
+        <cb-millis>0</cb-millis>
+    </service-profile>
+
+    <service-profile service-profile-id="sony_gathering.prof">
+        <timeout-millis>100000</timeout-millis>
+        <rate-limit-enabled>false</rate-limit-enabled>
+        <rate-limit-calls>0</rate-limit-calls>
+        <rate-limit-millis>0</rate-limit-millis>
+        <cb-enabled>false</cb-enabled>
+        <cb-calls>0</cb-calls>
+        <cb-millis>0</cb-millis>
+    </service-profile>
+
+    <service-profile service-profile-id="sony_invalidMember.prof">
+        <timeout-millis>100000</timeout-millis>
+        <rate-limit-enabled>false</rate-limit-enabled>
+        <rate-limit-calls>0</rate-limit-calls>
+        <rate-limit-millis>0</rate-limit-millis>
+        <cb-enabled>false</cb-enabled>
+        <cb-calls>0</cb-calls>
+        <cb-millis>0</cb-millis>
+    </service-profile>
+
+    <service-profile service-profile-id="sony_newMember.prof">
+        <timeout-millis>100000</timeout-millis>
+        <rate-limit-enabled>false</rate-limit-enabled>
+        <rate-limit-calls>0</rate-limit-calls>
+        <rate-limit-millis>0</rate-limit-millis>
+        <cb-enabled>false</cb-enabled>
+        <cb-calls>0</cb-calls>
+        <cb-millis>0</cb-millis>
+    </service-profile>
+
+    <service-profile service-profile-id="sony_searchtoken.prof">
+        <timeout-millis>100000</timeout-millis>
+        <rate-limit-enabled>false</rate-limit-enabled>
+        <rate-limit-calls>0</rate-limit-calls>
+        <rate-limit-millis>0</rate-limit-millis>
+        <cb-enabled>false</cb-enabled>
+        <cb-calls>0</cb-calls>
+        <cb-millis>0</cb-millis>
+    </service-profile>
+
+    <service-profile service-profile-id="sony_viewMember.prof">
+        <timeout-millis>100000</timeout-millis>
+        <rate-limit-enabled>false</rate-limit-enabled>
+        <rate-limit-calls>0</rate-limit-calls>
+        <rate-limit-millis>0</rate-limit-millis>
+        <cb-enabled>false</cb-enabled>
+        <cb-calls>0</cb-calls>
+        <cb-millis>0</cb-millis>
+    </service-profile>
+
+    <service-profile service-profile-id="sony_viewMemberByToken.prof">
+        <timeout-millis>100000</timeout-millis>
+        <rate-limit-enabled>false</rate-limit-enabled>
+        <rate-limit-calls>0</rate-limit-calls>
+        <rate-limit-millis>0</rate-limit-millis>
+        <cb-enabled>false</cb-enabled>
+        <cb-calls>0</cb-calls>
+        <cb-millis>0</cb-millis>
+    </service-profile>
+
+    <service service-id="SONY.Authorization">
+        <service-type>HTTP</service-type>
+        <enabled>true</enabled>
+        <log-prefix/>
+        <comm-log-enabled>false</comm-log-enabled>
+        <force-prd-enabled>false</force-prd-enabled>
+        <mock-mode-enabled>false</mock-mode-enabled>
+        <profile-id>sony_authorization.prof</profile-id>
+        <credential-id>sony_authorization.cred</credential-id>
+    </service>
+
+    <service service-id="SONY.Cancel">
+        <service-type>HTTP</service-type>
+        <enabled>true</enabled>
+        <log-prefix/>
+        <comm-log-enabled>false</comm-log-enabled>
+        <force-prd-enabled>false</force-prd-enabled>
+        <mock-mode-enabled>false</mock-mode-enabled>
+        <profile-id>sony_cancel.prof</profile-id>
+        <credential-id>sony_cancel.cred</credential-id>
+    </service>
+
+    <service service-id="SONY.CancelInvalidMember">
+        <service-type>HTTP</service-type>
+        <enabled>true</enabled>
+        <log-prefix/>
+        <comm-log-enabled>false</comm-log-enabled>
+        <force-prd-enabled>false</force-prd-enabled>
+        <mock-mode-enabled>false</mock-mode-enabled>
+        <profile-id>sony_cancelInvalidMember.prof</profile-id>
+        <credential-id>sony_cancelInvalidMember.cred</credential-id>
+    </service>
+
+    <service service-id="SONY.CaptureRecord">
+        <service-type>HTTP</service-type>
+        <enabled>true</enabled>
+        <log-prefix/>
+        <comm-log-enabled>false</comm-log-enabled>
+        <force-prd-enabled>false</force-prd-enabled>
+        <mock-mode-enabled>false</mock-mode-enabled>
+        <profile-id>sony_captureRecord.prof</profile-id>
+        <credential-id>sony_captureRecord.cred</credential-id>
+    </service>
+
+    <service service-id="SONY.CardCheck">
+        <service-type>HTTP</service-type>
+        <enabled>true</enabled>
+        <log-prefix/>
+        <comm-log-enabled>false</comm-log-enabled>
+        <force-prd-enabled>false</force-prd-enabled>
+        <mock-mode-enabled>false</mock-mode-enabled>
+        <profile-id>sony_cardCheck.prof</profile-id>
+        <credential-id>sony_cardCheck.cred</credential-id>
+    </service>
+
+    <service service-id="SONY.DeleteMember">
+        <service-type>HTTP</service-type>
+        <enabled>true</enabled>
+        <log-prefix/>
+        <comm-log-enabled>false</comm-log-enabled>
+        <force-prd-enabled>false</force-prd-enabled>
+        <mock-mode-enabled>false</mock-mode-enabled>
+        <profile-id>sony_deleteMember.prof</profile-id>
+        <credential-id>sony_deleteMember.cred</credential-id>
+    </service>
+
+    <service service-id="SONY.EditMember">
+        <service-type>HTTP</service-type>
+        <enabled>true</enabled>
+        <log-prefix/>
+        <comm-log-enabled>false</comm-log-enabled>
+        <force-prd-enabled>false</force-prd-enabled>
+        <mock-mode-enabled>false</mock-mode-enabled>
+        <profile-id>sony_editMember.prof</profile-id>
+        <credential-id>sony_editMember.cred</credential-id>
+    </service>
+
+    <service service-id="SONY.Gathering">
+        <service-type>HTTP</service-type>
+        <enabled>true</enabled>
+        <log-prefix/>
+        <comm-log-enabled>false</comm-log-enabled>
+        <force-prd-enabled>false</force-prd-enabled>
+        <mock-mode-enabled>false</mock-mode-enabled>
+        <profile-id>sony_gathering.prof</profile-id>
+        <credential-id>sony_gathering.cred</credential-id>
+    </service>
+
+    <service service-id="SONY.InvalidMember">
+        <service-type>HTTP</service-type>
+        <enabled>true</enabled>
+        <log-prefix/>
+        <comm-log-enabled>false</comm-log-enabled>
+        <force-prd-enabled>false</force-prd-enabled>
+        <mock-mode-enabled>false</mock-mode-enabled>
+        <profile-id>sony_invalidMember.prof</profile-id>
+        <credential-id>sony_invalidMember.cred</credential-id>
+    </service>
+
+    <service service-id="SONY.NewMember">
+        <service-type>HTTP</service-type>
+        <enabled>true</enabled>
+        <log-prefix/>
+        <comm-log-enabled>false</comm-log-enabled>
+        <force-prd-enabled>false</force-prd-enabled>
+        <mock-mode-enabled>false</mock-mode-enabled>
+        <profile-id>sony_newMember.prof</profile-id>
+        <credential-id>sony_newMember.cred</credential-id>
+    </service>
+
+    <service service-id="SONY.TokenSearch">
+        <service-type>HTTP</service-type>
+        <enabled>true</enabled>
+        <log-prefix/>
+        <comm-log-enabled>false</comm-log-enabled>
+        <force-prd-enabled>false</force-prd-enabled>
+        <mock-mode-enabled>false</mock-mode-enabled>
+        <profile-id>sony_searchtoken.prof</profile-id>
+        <credential-id>sony_searchtoken.cred</credential-id>
+    </service>
+
+    <service service-id="SONY.ViewMember">
+        <service-type>HTTP</service-type>
+        <enabled>true</enabled>
+        <log-prefix/>
+        <comm-log-enabled>false</comm-log-enabled>
+        <force-prd-enabled>false</force-prd-enabled>
+        <mock-mode-enabled>false</mock-mode-enabled>
+        <profile-id>sony_viewMember.prof</profile-id>
+        <credential-id>sony_viewMember.cred</credential-id>
+    </service>
+
+    <service service-id="SONY.ViewMemberByToken">
+        <service-type>HTTP</service-type>
+        <enabled>true</enabled>
+        <log-prefix/>
+        <comm-log-enabled>false</comm-log-enabled>
+        <force-prd-enabled>false</force-prd-enabled>
+        <mock-mode-enabled>false</mock-mode-enabled>
+        <profile-id>sony_viewMemberByToken.prof</profile-id>
+        <credential-id>sony_viewMemberByToken.cred</credential-id>
+    </service>
+
+</services>

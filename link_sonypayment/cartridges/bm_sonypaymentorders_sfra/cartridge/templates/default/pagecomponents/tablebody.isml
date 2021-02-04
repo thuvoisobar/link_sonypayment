@@ -1,0 +1,17 @@
+<tr>
+	<td class="table_detail w e s middle center">
+		<input type="checkbox" name="SelectedOrderNO" value="${order.orderNo}">
+		<input type="hidden" name="OrderNO" value="${order.orderNo}">
+	</td>
+	<isscript>
+		var calendar = dw.util.Calendar(order.creationDate);
+	</isscript>
+	<td class="table_detail e s"><a href="${URLUtils.url('ViewOrder_52-FindByNumber', 'status', 'open', 'OrderID', order.UUID)}" class="table_detail_link"><isprint value="${order.orderNo}" /></a></td>
+	<td class="table_detail e s" style="text-transform: lowercase"><isprint value="${dw.util.StringUtils.formatCalendar(calendar, 'M/d/yy H:mm:ss a')}" /></td>
+	<td class="table_detail e s"><isprint value="${order.createdBy}" /></td>
+	<td class="table_detail e s"><isprint value="${ (order.getCustomer().registered) ? Resource.msg('tablebody.table_detail.registered','general',null) : Resource.msg('tablebody.table_detail.unregistered','general',null) }" /></td>
+	<td class="table_detail e s"><isprint value="${order.getCustomerName()}" /></td>
+	<td class="table_detail e s"><isprint value="${order.getCustomerEmail()}" /></td>
+	<td class="table_detail e s"><isprint value="${order.getTotalGrossPrice()}" /></td>
+	<td class="table_detail e s"><isprint value="${order.status}" /></td>
+</tr>

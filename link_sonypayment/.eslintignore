@@ -1,0 +1,8 @@
+cartridges/**/cartridge/static/
+coverage/
+doc/
+bin/
+tmp/
+.vscode/
+webpack.config.js
+test/

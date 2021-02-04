@@ -1,0 +1,23 @@
+<!--- TEMPLATENAME: tablehead.isml --->
+<tr>
+	<td class="table_header w n e s center" nowrap="nowrap" width="70">
+		<div id="A" style="display: block;">
+			<table border="0" cellspacing="0" cellpadding="0" class="table_header center" width="70">
+				<tr><td nowrap="nowrap"><a href="javascript:selectAll('OrderListForm');" class="tableheader">Select All</a></td></tr>
+			</table>
+		</div>
+		<div id="B" style="display: none;">
+			<table border="0" cellspacing="0" cellpadding="0" class="table_header center" width="70">
+				<tr><td nowrap="nowrap"><a href="javascript:selectAll('OrderListForm');" class="tableheader">Clear All</a></td></tr>
+			</table>
+		</div>
+	</td>
+	<td class="table_header n e s" nowrap="nowrap">${Resource.msg('tablehead.namecolumn.number','general',null)}</td>
+	<td class="table_header n e s" nowrap="nowrap">${Resource.msg('tablehead.namecolumn.orderdate','general',null)}</td>
+	<td class="table_header n e s" nowrap="nowrap">${Resource.msg('tablehead.namecolumn.createdby','general',null)}</td>
+	<td class="table_header n e s" nowrap="nowrap">${Resource.msg('tablehead.namecolumn.registrationstatus','general',null)}</td>
+	<td class="table_header n e s" nowrap="nowrap">${Resource.msg('tablehead.namecolumn.customer','general',null)}</td>
+	<td class="table_header n e s" nowrap="nowrap">${Resource.msg('tablehead.namecolumn.email','general',null)}</td>
+	<td class="table_header n e s" nowrap="nowrap">${Resource.msg('tablehead.namecolumn.total','general',null)}</td>
+	<td class="table_header n e s" nowrap="nowrap">${Resource.msg('tablehead.namecolumn.status','general',null)}</td>
+</tr>

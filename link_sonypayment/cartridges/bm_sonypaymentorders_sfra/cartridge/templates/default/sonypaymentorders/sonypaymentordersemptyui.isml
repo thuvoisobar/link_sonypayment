@@ -1,0 +1,14 @@
+<isdecorate template="application/MenuFrame">
+<iscontent type="text/html" charset="UTF-8">
+<isinclude template="inc/Modules">
+
+<isinclude template="pagecomponents/pagenavigator">
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+	<tbody>
+		<tr><td class="table_title_description aldi"><p>${Resource.msg('sonypaymentordersemptyui.table_title_description','general',null)}</p></td></tr>
+		<tr><td align="right" class="w e s"></td></tr>
+	</tbody>
+</table>
+
+</isdecorate>

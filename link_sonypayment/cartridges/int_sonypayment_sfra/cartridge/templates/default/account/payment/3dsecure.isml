@@ -1,0 +1,16 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="application/x-www-form-urlencoded">
+</head>
+<body>
+	<form action="${pdict.Threedsecure}" method="post" id="3DSecureForm">
+		<input type="hidden" name="MerchantId" value="${pdict.MerchantID}" />
+		<input type="hidden" name="EncryptValue" value="${pdict.EncValue}" />
+	</form>
+	<script>
+        document.getElementById('3DSecureForm').submit();
+    </script>
+</body>
+
+</html>

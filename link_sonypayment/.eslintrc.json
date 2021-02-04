@@ -1,0 +1,35 @@
+{
+    "root": true,
+    "extends": "airbnb-base/legacy",
+    "rules": {
+        "import/no-unresolved": "off",
+        "indent": ["error", 4, { "SwitchCase": 1, "VariableDeclarator": 1 }],
+        "func-names": "off",
+        "require-jsdoc": "error",
+        "valid-jsdoc": ["error", { "preferType": { "Boolean": "boolean", "Number": "number", "object": "Object", "String": "string" }, "requireReturn": false}],
+        "vars-on-top": "off",
+        "global-require": "off",
+        "no-shadow": ["error", { "allow": ["err", "callback"]}],
+        "max-len": "off",
+        "no-use-before-define": ["error", { "functions": false, "classes": false }],
+        "block-scoped-var": "off",
+        "no-unused-vars": ["error", {"vars": "all", "varsIgnorePattern": "requestParams"}],
+        "no-param-reassign": "off",
+        "new-cap": "off",
+        "no-prototype-builtins": "off",
+        "no-useless-concat": "off"
+    },
+    "globals": {
+        "request": "readonly",
+        "customer": "readonly",
+        "Resource": "readonly",
+        "dw": "readonly",
+        "empty": "readonly",
+        "$": "readonly",
+        "SpsvApi": "readonly",
+        "jQuery": "readonly",
+        "Cleave": "readonly",
+        "requestParams": "readonly",
+        "parseInt": "readonly"
+    }
+}

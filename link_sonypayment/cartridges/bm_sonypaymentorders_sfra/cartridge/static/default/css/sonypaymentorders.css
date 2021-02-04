@@ -1,0 +1,18 @@
+.strong {font-weight: bold;}
+.paging-wrap{padding-top: 10px}
+.pageInfo{float: left}
+.pageBrowser{float: none; margin-top: 10px;}
+.pageBrowser .pagination .results-hits {float: left}
+.pageBrowser .pagination ul {margin:auto; float: right}
+.pageBrowser .pagination li {list-style-type:none; float:left; margin-left:5px;}
+.pageBrowser .pagination a {text-decoration:underline; padding: 2px 4px;}
+.pageBrowser .pagination .nextpage a {text-decoration:none;}
+.pageBrowser .pagination .previouspage a {text-decoration:none;}
+.pageBrowser .labelPage {padding:3px;margin-right:20px;}
+.pageBrowser .pageBrowserCell .pageBrowser {height:auto;}
+.unregistration-custom .infobox_title_search{
+	padding: 5px;
+}
+.unregistration-custom .infobox_item_search{
+	padding: 10px;
+}

@@ -1,0 +1,36 @@
+<isdecorate template="application/MenuFrame">
+<iscontent type="text/html" charset="UTF-8">
+<isinclude template="inc/Modules">
+<isinclude template="util/modules">
+<link type="text/css" href="${URLUtils.absStatic('/css/sonypaymentorders.css')}" rel="stylesheet"/>
+<script src="${URLUtils.staticURL('/lib/jquery/jquery-2.1.1.min.js')}" type="text/javascript"></script>
+<script src="${URLUtils.absStatic('/jscript/bm_sonypaymentorders.js')}" type="text/javascript"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	actionSearch();
+});
+</script> 
+
+<isinclude template="pagecomponents/pagenavigator">
+
+<isinclude template="pagecomponents/searchnavigator">
+
+<form action="${URLUtils.url( 'SonyPaymentOrders-Process', 'orderNo', (orderNo != null)? orderNo : '' )}" name="OrderListForm" method="post"  style="margin: 0px;">
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+
+	<isinclude template="pagecomponents/tablehead">
+	
+	<isset name="order" value="${pdict.Order}" scope="page" />
+	<isinclude template="pagecomponents/tablebody">
+	
+</table>
+<isinclude template="pagecomponents/tablefootaction">
+</form>
+
+<div class="paging-wrap">
+	<div class="pageInfo">
+		Showing <span class="strong">1</span> - <span class="strong">1</span> of <span class="strong">1</span> items.
+	</div>
+</div>
+
+</isdecorate>

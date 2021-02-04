@@ -1,0 +1,51 @@
+<!-- Get Token Service Sony Payment-->
+<isif condition="${'sony_enable_catridge' in dw.system.Site.current.preferences.custom 
+					&& dw.system.Site.current.preferences.custom.sony_enable_catridge==true
+					&& 'tokenSettlementAuthenticationCode' in dw.system.Site.current.preferences.custom 
+					&& dw.system.Site.current.preferences.custom.tokenSettlementAuthenticationCode!=null}">
+ 
+    <script type="text/javascript"
+    src="${dw.system.Site.getCurrent().getCustomPreferenceValue('tokenServiceURL') + dw.system.Site.getCurrent().getCustomPreferenceValue('tokenSettlementAuthenticationCode')}"
+    callBackFunc = "setToken"
+    class = "spsvToken"></script>
+
+</isif>
+<script>
+    function setToken(token,card) {
+        // Set token and card number to elements in data transmission form
+        var cardNumber = $('[name*="dwfrm_billing_creditCardFields_cardNumber"]').val();
+        cardNumber = cardNumber.replace(/\s/g, '');
+        var cardExpirationDate = {};
+        var ccYear = $('[name*="dwfrm_billing_creditCardFields_expirationYear"]').val();
+        cardExpirationDate.year = ccYear.substr(ccYear.length-2, ccYear.length);
+        var ccMonth = $('[name*="dwfrm_billing_creditCardFields_expirationMonth"]').val();
+        cardExpirationDate.month = (ccMonth.length == 1) ? ("0" + ccMonth) : (ccMonth);
+
+        var phoneNumber = $('[name*="dwfrm_billing_creditCardFields_ccphone"]').length ? $('[name*="dwfrm_billing_creditCardFields_ccphone"]').val() : "0000";
+        var lastName = $('[name*="dwfrm_billing_creditCardFields_lastnameKana"]').length ? $('[name*="dwfrm_billing_creditCardFields_lastnameKana"]').val() : " ";
+        var firstName = $('[name*="dwfrm_billing_creditCardFields_firstnameKana"]').length ? $('[name*="dwfrm_billing_creditCardFields_firstnameKana"]').val() : " ";
+        var securityCode = $('[name*="dwfrm_billing_creditCardFields_securityCode"]').length ? $('[name*="dwfrm_billing_creditCardFields_securityCode"]').val() : null;
+        var dateOfBirth = {};
+        dateOfBirth.month = $('[name*="dwfrm_billing_creditCardFields_birthdayMonth"]').length ? $('[name*="dwfrm_billing_creditCardFields_birthdayMonth"]').val() : "01";
+        dateOfBirth.day = $('[name*="dwfrm_billing_creditCardFields_birthdayDay"]').length ? $('[name*="dwfrm_billing_creditCardFields_birthdayDay"]').val() : "01";
+        
+        // Set token and card number to elements in data transmission form
+        if ($('[name="dwfrm_billing_creditCardFields_token"]').val() == '') {
+            $('[name="dwfrm_billing_creditCardFields_token"]').val(token);
+        } 
+
+        if ($('[name="dwfrm_billing_creditCardFields_token"]').val() != '' &&
+            $('[name="dwfrm_billing_creditCardFields_token"]').val() != token &&
+            $('[name="dwfrm_billing_creditCardFields_ordertoken"]').val() == '') {
+                $('[name="dwfrm_billing_creditCardFields_ordertoken"]').val(token);
+        }
+        $('[name="dwfrm_billing_creditCardFields_card"]').val(card);
+        // submit form data
+        if ($('[name="dwfrm_billing_creditCardFields_token"]').val() != '' &&
+            $('[name="dwfrm_billing_creditCardFields_ordertoken"]').val() != '') {
+                $('.next-step-button button').trigger( "click" );
+        } else {
+            SpsvApi.spsvCreateToken(cardNumber, cardExpirationDate.year, cardExpirationDate.month, securityCode, dateOfBirth.month, dateOfBirth.day, phoneNumber, lastName, firstName);
+        }
+    }
+</script>

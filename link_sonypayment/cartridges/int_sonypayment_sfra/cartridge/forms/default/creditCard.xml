@@ -1,0 +1,119 @@
+<?xml version="1.0"?>
+<form xmlns="http://www.demandware.com/xml/form/2008-04-19">
+
+    <!-- field for edit credit card number -->
+    <field
+        formid="editNumber"
+        label="label.input.creditcard.number"
+        type="string"
+        mandatory="false"
+        max-length="16"/>
+
+    <field formid="paymentMethod" type="string" mandatory="true" />
+
+    <field formid="cardType" label="profile.cardtype" type="string" mandatory="true" binding="cardType"
+           max-length="16" missing-error="error.message.required" />
+
+    <field formid="cardNumber" label="label.input.creditcard.number" type="string" mandatory="true" binding="cardNumber"
+           max-length="20" missing-error="payment.card.number.missing" parse-error="error.message.required" />
+
+    <field formid="cardOwner" label="label.input.creditcard.owner" type="string" mandatory="true" binding="cardOwner"
+           max-length="16" missing-error="error.message.required" />
+
+    <field formid="expirationMonth" label="label.input.payment.expirationmonth" type="integer" mandatory="true" binding="expirationMonth" missing-error="payment.card.month.missing"
+           value-error="address.field.invalid">
+        <options>
+            <option optionid="" label="select.default.month" value=""/>
+            <option optionid="01" label="01" value="01"/>
+            <option optionid="02" label="02" value="02"/>
+            <option optionid="03" label="03" value="03"/>
+            <option optionid="04" label="04" value="04"/>
+            <option optionid="05" label="05" value="05"/>
+            <option optionid="06" label="06" value="06"/>
+            <option optionid="07" label="07" value="07"/>
+            <option optionid="08" label="08" value="08"/>
+            <option optionid="09" label="09" value="09"/>
+            <option optionid="10" label="10" value="10"/>
+            <option optionid="11" label="11" value="11"/>
+            <option optionid="12" label="12" value="12"/>
+        </options>
+    </field>
+
+    <field formid="expirationYear" label="label.input.payment.expirationyear" type="integer" mandatory="true"
+           missing-error="payment.card.year.missing">
+        <options>
+            <option optionid="" label="select.default.year" value=""/>
+        </options>
+    </field>
+
+    <field formid="securityCode" label="profile.securitycode" type="string" mandatory="true" binding="securityCode"
+           max-length="4" missing-error="error.card.info.missing.securityCode" />
+
+    <!-- SONY CODE | Birthday -->   
+    
+    <field formid="birthdayDay" label="resource.day" type="string" mandatory="true" binding="custom.creditCardBirthdayDay" missing-error="creditcard.birthday.daymissingerror" value-error="creditcard.birthday.dayvalueerror">
+        <options>
+            <option label="day.001" value="01"/>
+            <option label="day.002" value="02"/>
+            <option label="day.003" value="03"/>
+            <option label="day.004" value="04"/>
+            <option label="day.005" value="05"/>
+            <option label="day.006" value="06"/>
+            <option label="day.007" value="07"/>
+            <option label="day.008" value="08"/>
+            <option label="day.009" value="09"/>
+            <option label="day.010" value="10"/>
+            <option label="day.011" value="11"/>
+            <option label="day.012" value="12"/>
+            <option label="day.013" value="13"/>
+            <option label="day.014" value="14"/>
+            <option label="day.015" value="15"/>
+            <option label="day.016" value="16"/>
+            <option label="day.017" value="17"/>
+            <option label="day.018" value="18"/>
+            <option label="day.019" value="19"/>
+            <option label="day.020" value="20"/>
+            <option label="day.021" value="21"/>
+            <option label="day.022" value="22"/>
+            <option label="day.023" value="23"/>
+            <option label="day.024" value="24"/>
+            <option label="day.025" value="25"/>
+            <option label="day.026" value="26"/>
+            <option label="day.027" value="27"/>
+            <option label="day.028" value="28"/>
+            <option label="day.029" value="29"/>
+            <option label="day.030" value="30"/>
+            <option label="day.031" value="31"/>
+        </options>
+    </field>
+
+    <field formid="birthdayMonth" label="resource.month" type="string" mandatory="true" binding="custom.creditCardBirthdayMonth" missing-error="creditcard.birthday.monthmissingerror" value-error="creditcard.birthday.monthvalueerror">
+        <options>
+            <option label="month.january"   value="01"/>
+            <option label="month.february"  value="02"/>
+            <option label="month.march"     value="03"/>
+            <option label="month.april"     value="04"/>
+            <option label="month.may"       value="05"/>
+            <option label="month.june"      value="06"/>
+            <option label="month.july"      value="07"/>
+            <option label="month.august"    value="08"/>
+            <option label="month.september" value="09"/>
+            <option label="month.october"   value="10"/>
+            <option label="month.november"  value="11"/>
+            <option label="month.december"  value="12"/>
+        </options>
+    </field>
+    
+
+    <!-- SONY CODE | Token , Card, Phone, Kana Name -->
+    <field formid="ccphone" label="creditcard.phone.label" type="string" mandatory="true"/>
+    <field formid="lastnameKana" label="creditcard.lastnamekana.label" type="string" mandatory="true"/>
+    <field formid="firstnameKana" label="creditcard.firstnamekana.label" type="string" mandatory="true"/>
+    <field formid="token" type="string" mandatory="false"/>
+    <field formid="ordertoken" type="string" mandatory="false"/>
+    <field formid="card" type="string" mandatory="false"/>
+    <field formid="uuid" type="string" mandatory="false"/>
+    
+    <field formid="saveCard" label="label.save.card" binding="saveCard" type="boolean" mandatory="false" checked="true" />
+
+</form>

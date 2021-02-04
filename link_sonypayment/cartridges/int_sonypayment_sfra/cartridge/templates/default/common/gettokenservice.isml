@@ -1,0 +1,20 @@
+<!-- Get Token Service Sony Payment-->
+<isif condition="${'sony_enable_catridge' in dw.system.Site.current.preferences.custom 
+					&& dw.system.Site.current.preferences.custom.sony_enable_catridge==true
+					&& 'tokenSettlementAuthenticationCode' in dw.system.Site.current.preferences.custom 
+					&& dw.system.Site.current.preferences.custom.tokenSettlementAuthenticationCode!=null}">
+ 
+    <script type="text/javascript"
+    src="${dw.system.Site.getCurrent().getCustomPreferenceValue('tokenServiceURL') + dw.system.Site.getCurrent().getCustomPreferenceValue('tokenSettlementAuthenticationCode')}"
+    callBackFunc = "setToken"
+    class = "spsvToken"></script>
+
+</isif>
+<script>
+    function setToken(token,card) {
+        // Set token and card number to elements in data transmission form
+        $('[name="dwfrm_creditCard_token"]').val(token);
+        $('[name="dwfrm_creditCard_card"]').val(card);
+        $('form.payment-form-hidden').trigger('submit');
+    }
+</script>

@@ -1,0 +1,14 @@
+<!--- TEMPLATENAME: searchnavigator.isml --->
+<table border="0" cellpadding="0" cellspacing="0" width="100%"class="infobox w e unregistration-custom">
+	<tbody>
+		<input type="hidden" id="cur_url" name="cur_url" value="${URLUtils.url('SonyPaymentOrders-Start')}" />
+		<isset name="orderNo" value="${pdict.CurrentHttpParameterMap.orderNo.stringValue}" scope="page" />
+		<tr><td colspan="3" class="infobox_title_search">${Resource.msg('searchnavigator.infobox_title_search','general',null)}</td></tr>
+		<tr><td colspan="3" class="infobox_item_search"><img src="${URLUtils.staticURL('/images/space.gif')}" width="1" height="1" alt=""></td></tr>
+		<tr>
+			<td class="infobox_item_search" nowrap="nowrap" width="5%">${Resource.msg('searchnavigator.infobox_title_search.ordernumber','general',null)}:&nbsp;</td>
+			<td class="infobox_item_search" width="10%"><input type="text" name="OrderSearchForm2_SimpleSearchTerm" maxlength="350" size="35" value="${(orderNo != null)? orderNo : ''}" class="inputfield_en"></td>
+			<td class="button"><button id="searchFocus" name="simpleSearch" type="submit" class="button">${Resource.msg('searchnavigator.button.find','general',null)}</button></td>
+		</tr>
+	</tbody>
+</table>

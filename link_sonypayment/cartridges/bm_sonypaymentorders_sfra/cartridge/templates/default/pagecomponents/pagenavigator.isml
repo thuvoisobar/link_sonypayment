@@ -1,0 +1,75 @@
+<!--- TEMPLATENAME: pagenavigator.isml --->
+<!-- Page Navigator -->
+<isset name="TOP_URL" value="${URLUtils.url('SiteNavigationBar-ShowMenuitemOverview', 'CurrentMenuItemId', 'orders')}" scope="PAGE">
+<isset name="ROOT_URL" value="${URLUtils.url('ViewApplication-CompressMenuGroup', 'MenuGroupID', '', 'OverviewPage', 'SiteNavigationBar-ShowSiteOverview')}" scope="PAGE">
+<ISBreadcrumb name1="Merchant Tools" url1="${ROOT_URL.toString()}" name2="Ordering" url2="${TOP_URL.toString()}" name3="${Resource.msg('pagenavigator.table.table_title','general',null)}">
+<!-- EO Page Navigator -->
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+	<tbody>
+		<tr><td width="100%" class="table_title aldi">${Resource.msg('pagenavigator.table.table_title','general',null)}</td></tr>
+		<tr><td class="w e s"><img src="${URLUtils.staticURL('/images/space.gif')}" width="1" height="2" alt="" border="0"></td></tr>
+
+		<isif condition="${!empty(pdict.ProcessResult) && pdict.ProcessResult.ActionComplete}">
+			<isscript>
+				var status = 'success';
+				var statusInfo = (pdict.ProcessParams.ActionCapture) ? Resource.msg('pagenavigator.order.capture.success','general',null) : Resource.msg('pagenavigator.order.cancel.success','general',null);
+				
+				if(!empty(pdict.ProcessResult.SonyErrorMessage)) {
+					status = 'error';
+					statusInfo = (pdict.ProcessParams.ActionCapture) ? 'Error details : ' : 'Some orders cancel failed';
+					statusInfo += pdict.ProcessResult.SonyErrorMessage;
+				}
+				
+				var statusPrefix = (pdict.ProcessParams.ActionCapture) ? Resource.msg('pagenavigator.order.captured','general',null) : Resource.msg('pagenavigator.order.canceled','general',null);
+				var orderSuccessString = !empty(pdict.ProcessResult.orderSuccess)? statusPrefix + ' successfully : ' + pdict.ProcessResult.orderSuccess.join(', ') : '';
+				var orderFailedString = !empty(pdict.ProcessResult.orderFailed)? statusPrefix + ' failed : ' + pdict.ProcessResult.orderFailed.join(', ') : '';
+			</isscript>
+			<tr>
+				<td>
+					<table border="0" cellspacing="0" cellpadding="4" width="100%" class="error_box w e s">
+						<tr valign="top">
+							<td class="success_icon e">
+								<img src="${URLUtils.staticURL('/images/' + status + '.gif')}" width="16" height="15" alt="" border="0">
+							</td>
+							<td width="100%" class="${status}"><isprint value="${statusInfo}"/></td>
+						</tr>
+						<isif condition="${!empty(orderSuccessString)}">
+						<tr valign="top">
+							<td class="${status}_icon e">
+								<img src="${URLUtils.staticURL('/images/' + status + '.gif')}" width="16" height="15" alt="" border="0">
+							</td>
+							<td width="100%" class="success"><isprint value="${orderSuccessString}"/></td>
+						</tr>
+						</isif>
+						<isif condition="${!empty(orderFailedString)}">
+						<tr valign="top">
+							<td class="error_icon e">
+								<img src="${URLUtils.staticURL('/images/' + status + '.gif')}" width="16" height="15" alt="" border="0">
+							 </td>
+							<td width="100%" class="error"><isprint value="${orderFailedString}"/></td>
+						</tr>
+						</isif>
+					</table>
+				</td>
+			</tr>
+		</isif>
+		
+		<isif condition="${pdict.ProcessParams && (pdict.ProcessParams.ActionCapture || pdict.ProcessParams.ActionCancel) && empty(pdict.ProcessParams.SelectedOrderList) }">
+			<tr>
+				<td>
+					<table border="0" cellspacing="0" cellpadding="4" width="100%" class="error_box w e s">
+						<tr valign="top">
+					    	<td class="error_icon e">
+					        	<img src="${URLUtils.staticURL('/images/error.gif')}" width="16" height="15" alt="" border="0">
+					        </td>
+					        <td width="100%" class="error">${Resource.msg('pagenavigator.order.error.msg.selectorder','general',null)}</td>
+					    </tr>
+					</table>
+		    	</td>
+		    </tr>
+		</isif>
+	    
+	    <tr><td class="table_title_description e w s"><p>${Resource.msg('pagenavigator.table.table_title_description','general',null)}</p></td></tr>
+	</tbody>
+</table>

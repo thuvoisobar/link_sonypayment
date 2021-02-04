@@ -1,0 +1,81 @@
+<isif condition="${pdict.paymentInstruments.size() > 0}">
+    <ul class="payment-list">
+        <isloop items="${pdict.paymentInstruments}" var="paymentInstrument">
+            <isset name="memberInfo" value="${require('*/cartridge/scripts/helpers/sonyPaymentHelper').viewMember(null, paymentInstrument.UUID)}" scope="page"/>
+            
+            <div class="row justify-content-center" id="uuid-${paymentInstrument.UUID}">
+                <div class="col-sm-8 col-md-6">
+                    <div class="card">
+                        <div class="card-header">
+                            <h2 class="pull-left">${paymentInstrument.creditCardHolder}</h2>
+                        </div>
+                        <div class="card-body card-body-positioning">
+                            <div class="card-info-group">
+                                <p>${Resource.msg('label.payment.credit','account',null)} ${paymentInstrument.creditCardType}</p>
+                                <p>${paymentInstrument.maskedCreditCardNumber}</p>
+                                <p>${Resource.msg('label.payment.ending','account',null)} ${paymentInstrument.creditCardExpirationMonth}/${paymentInstrument.creditCardExpirationYear}</p>
+                            </div>
+                            <button
+                                type="button"
+                                class="remove-btn remove-payment btn-light"
+                                data-toggle="modal"
+                                data-target="#deletePaymentModal"
+                                data-id="${paymentInstrument.UUID}"
+                                data-card="${paymentInstrument.maskedCreditCardNumber}"
+                                data-url="${pdict.actionUrl}"
+                                aria-label="${Resource.msg('label.payment.deletepayment','payment',null)}">
+                                &times;
+                            </button>
+                            <div class="form-group">
+                                <isif condition="${memberInfo.KaiinStatus == 1 || memberInfo.KaiinStatus == 3}">
+                                    <button type="button" 
+                                    data-id="${paymentInstrument.UUID}" 
+                                    data-url="${URLUtils.url('SonyPayment-Lock')}" 
+                                    class="button-text lock-payment" 
+                                    value="${Resource.msg('account.paymentinstrumentlist.lock','account_ja_JP',null)}" 
+                                    name="lock" disabled>
+                                        ${Resource.msg('account.paymentinstrumentlist.lock','account_ja_JP',null)}
+                                    </button>
+                                    
+                                    <button type="button" 
+                                    data-id="${paymentInstrument.UUID}" 
+                                    data-url="${URLUtils.url('SonyPayment-Unlock')}" 
+                                    class="button-text unlock-payment" 
+                                    value="${Resource.msg('account.paymentinstrumentlist.unlock','account_ja_JP',null)}" 
+                                    name="unlock">
+                                        ${Resource.msg('account.paymentinstrumentlist.unlock','account_ja_JP',null)}
+                                    </button>
+                                    
+                                <iselse>
+                                    <button type="button" 
+                                    data-id="${paymentInstrument.UUID}" 
+                                    data-url="${URLUtils.url('SonyPayment-Lock')}" 
+                                    class="button-text lock-payment" 
+                                    value="${Resource.msg('account.paymentinstrumentlist.lock','account_ja_JP',null)}" 
+                                    name="lock">
+                                        ${Resource.msg('account.paymentinstrumentlist.lock','account_ja_JP',null)}
+                                    </button>
+
+                                    <button type="button" 
+                                    data-id="${paymentInstrument.UUID}" 
+                                    data-url="${URLUtils.url('SonyPayment-Unlock')}" 
+                                    class="button-text unlock-payment" 
+                                    value="${Resource.msg('account.paymentinstrumentlist.unlock','account_ja_JP',null)}" 
+                                    name="unlock" disabled>
+                                        ${Resource.msg('account.paymentinstrumentlist.unlock','account_ja_JP',null)}
+                                    </button>
+                                </isif>
+                            </div>
+                            <div class="resultActionInCard">
+                            </div>
+                            <button class="edit-card button-text" href="${URLUtils.url('SonyPayment-Edit', 'uuid', paymentInstrument.UUID)}" title="${Resource.msg('account.paymentinstrumentlist.edit','account',null)}"
+                                <isif condition="${memberInfo.KaiinStatus == 1 || memberInfo.KaiinStatus == 3}">disabled</isif>>
+                                ${Resource.msg('account.paymentinstrumentlist.edit','account_ja_JP',null)}
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </isloop>
+    </ul>
+</isif>

@@ -1,0 +1,12 @@
+{
+    "hooks": [
+        {
+            "name": "app.payment.form.processor.sony_payment",
+            "script": "./cartridge/scripts/hooks/payment/processor/sony_payment_form_processor"
+        },
+        {
+            "name": "app.payment.processor.sony_payment",
+            "script": "./cartridge/scripts/hooks/payment/processor/sony_payment"
+        }
+    ]
+}
