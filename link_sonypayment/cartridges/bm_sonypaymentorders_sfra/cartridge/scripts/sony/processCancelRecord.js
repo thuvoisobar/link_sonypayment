@@ -138,10 +138,14 @@ function parseString(str) {
     var resultArr = str.split('&');
     var resultObj = {};
     var eArr = null;
-    for each(var e in resultArr) {
+    resultArr.forEach(function (e) {
         eArr = e.split('=');
         resultObj[eArr[0]] = eArr[1];
-    }
+    });
+    // for each(var e in resultArr) {
+    //     eArr = e.split('=');
+    //     resultObj[eArr[0]] = eArr[1];
+    // }
     return resultObj;
 }
 
