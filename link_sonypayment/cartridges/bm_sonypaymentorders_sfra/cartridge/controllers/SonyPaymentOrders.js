@@ -57,7 +57,7 @@ function start(processResult, processParams) {
     } else {
         try {
             var order = OrderMgr.getOrder(orderNo);
-            // eslint-disable-next-line no-shadow
+            /* eslint-disable */
             if ((order.status == OrderAPI.ORDER_STATUS_NEW || order.status == OrderAPI.ORDER_STATUS_OPEN) &&
                 order.paymentStatus == OrderAPI.PAYMENT_STATUS_NOTPAID && order.custom.sonyPaymentStatusIsAuth === true) {
                 ISML.renderTemplate('sonypaymentorders/findsonypaymentordersui', {
@@ -74,6 +74,7 @@ function start(processResult, processParams) {
                 ProcessParams: processParams
             });
         }
+        /* eslint-enable */
     }
 }
 
