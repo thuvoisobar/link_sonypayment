@@ -6,6 +6,8 @@ var OrderMgr = require('dw/order/OrderMgr');
 var OrderAPI = require('dw/order/Order');
 var PagingModel = require('dw/web/PagingModel');
 var ISML = require('dw/template/ISML');
+var server = require('server');
+var csrfProtection = require('*/cartridge/scripts/middleware/csrf');
 
 /**
  * @description Query Orders
@@ -125,8 +127,11 @@ function cancel(params) {
 /*
  * Exposed web methods
  */
-start.public = true;
-process.public = true;
+server.post('Process', csrfProtection.validateRequest, process);
+server.get('Start', start);
+module.exports = server.exports();
+// start.public = true;
+// process.public = true;
 
-exports.Start = start;
-exports.Process = process;
+// exports.Start = start;
+// exports.Process = process;
